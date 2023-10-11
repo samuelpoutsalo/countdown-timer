@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(47, 36, 56);
+}
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-soft-red: hsl(345, 95%, 68%);
+  --color-gray-blue: hsl(237, 18%, 59%);
+  --color-dark-blue: hsl(236, 21%, 26%);
+  --color-dark-blue-animation: hsl(236, 21%, 23%);
+  --color-very-dark-blue: hsl(235, 16%, 14%);
+  --color-black-dark-blue: hsl(234, 17%, 12%);
+}
+
+body {
+  top: 0;
+  padding-top: 1px;
+  margin: 0;
+  font-family: "Red Hat Text", sans-serif;
+  background: linear-gradient(var(--color-black-dark-blue), hsl(272, 24%, 14%));
+  font-size: 14px;
+  text-align: center;
+}
+.text {
+  z-index: 4;
+}
+
+.main-background {
+  background-image: url("./images/bg-stars.svg");
+}
+
+h1 {
+  margin-top: 15rem;
+  color: var(--color-white);
+  letter-spacing: 2px;
+}
+
+.cards {
+  position: relative;
+  padding-bottom: 20rem;
+  z-index: 1;
+}
+
+.container-segment {
+  display: inline-block;
+  color: var(--color-gray-blue);
+}
+
+.card {
+  display: block;
+  position: relative;
+  color: var(--color-soft-red);
+  font-size: 4rem;
+  padding: 3rem;
+  width: 6rem;
+  margin: 5rem 1rem 0 1rem;
+}
+
+.top {
+  border-radius: 0.5rem;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  display: block;
+  top: 0rem;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background-color: var(--color-dark-blue);
+  box-shadow: 0 0.1rem var(--color-black-dark-blue);
+}
+
+.bottom {
+  border-radius: 0.5rem;
+  content: "";
+  z-index: -2;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background-color: var(--color-dark-blue);
+  box-shadow: 0 0.7rem var(--color-black-dark-blue);
+}
+
+footer {
+  background-size: cover;
+  align-items: center;
+  padding: 4rem 0;
+  background-image: url("./images/pattern-hills.svg");
+}
+
+footer img {
+  width: 2rem;
+  padding: 4rem 2.5rem 0;
+  filter: invert(56%) sepia(9%) saturate(979%) hue-rotate(199deg)
+    brightness(94%) contrast(90%);
+}
+
+footer img:hover {
+  filter: invert(73%) sepia(72%) saturate(5177%) hue-rotate(310deg)
+    brightness(101%) contrast(97%);
+  cursor: pointer;
+}
+
+.card-divider {
+  position: absolute;
+  bottom: 49%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-black-dark-blue);
+}
+
+/*
+ANIMATIONS
+*/
+
+.secondSpan::after {
+  animation: swing-bottom-fwd 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    backwards;
+  border-radius: 0.5rem;
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.minuteSpan::after {
+  animation: swing-bottom-fwd 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    backwards;
+  border-radius: 0.3rem;
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.hourSpan::after {
+  animation: swing-bottom-fwd 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    backwards;
+  border-radius: 0.5rem;
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.daySpan::after {
+  animation: swing-bottom-fwd 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    backwards;
+  border-radius: 0.5rem;
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes swing-bottom-fwd {
+  0% {
+    transform: rotateX(0);
+    background-color: var(--color-dark-blue-animation);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: rotateX(-180deg);
+    transform-origin: bottom;
+    background-color: var(--color-dark-blue-animation);
+  }
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 915px) {
+  .container-segment {
+  width: fit-content;
+  }
+
+  .card {
+    font-size: 3rem;
+    padding: 2.25;
+    width: 4.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .card {
+    font-size: 2.5rem;
+    padding: 1.875rem;
+    width: 3.75rem;
+  }
+  @media only screen and (max-width: 550px) {
+    .card {
+      margin-left: 0;
+      margin-left: 0;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .card {
+      font-size: 2rem;
+      padding: 1.5rem;
+      width: 3rem;
+    }
+  }
+
+
+
+}
