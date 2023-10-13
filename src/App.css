@@ -208,20 +208,23 @@ ANIMATIONS
     padding: 1.875rem;
     width: 3.75rem;
   }
-  @media only screen and (max-width: 550px) {
-    .card {
-      margin-left: 0;
-      margin-left: 0;
-    }
-  }
-  @media only screen and (max-width: 550px) {
+  
+  @media only screen and (max-width: 560px) {
     .card {
       font-size: 2rem;
       padding: 1.5rem;
       width: 3rem;
+      margin-left: 0;
+      margin-left: 0;
     }
   }
-
+  @media only screen and (max-width: 435px) {
+    .card {
+      font-size: 1.5rem;
+      padding: 1.375rem;
+      width: 2.25rem;
+    }
+  }
 
 
 }
